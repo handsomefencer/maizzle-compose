@@ -3,13 +3,13 @@ services:
     build:
       additional_contexts:
         maizzle-src: .
-        app-src: ../story_store/maizzle
+        app-src: ../<your-rails-app>/maizzle
       dockerfile: ./mise/containers/maizzle/Dockerfile
     image: handsomefencer/maizzle-compose 
     entrypoint: ./mise/containers/maizzle/entrypoints/build-production.sh
     volumes:
       - node_modules:/artifact/node_modules
-      - ../story_store/app/views/devise:/artifact/app/views/devise
+      - ../<your-rails-app>/app/views/devise:/artifact/app/views/devise
       - .:/artifact
 
   dev: 
