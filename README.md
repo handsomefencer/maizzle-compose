@@ -20,7 +20,7 @@
 
 ## Why use Maizzle Compose?
 
-Maizzle helps you to write clean and fast email templates using inline styles. Rails allows you to preview them with interpolated code. 
+Maizzle helps you write clean and fast email templates using inline styles and Rails lets you to preview them with interpolated code. 
 
 With Maizzle Compose, you get both. 
 
@@ -32,10 +32,38 @@ Clone maizzle-compose adjacent your rails app:
 git clone git@github.com:handsomefencer/maizzle-compose.git
 ```
 
-such that
+...such that
 ```
 $ ls -d */
 maizzle-compose/  your-rails-app/
+```
+
+Copy docker-compose.example.yml to docker-compose.yml:
+
+```
+$ cp docker-compose.example.yml docker-compose.yml
+```
+
+Edit your docker-compose.yml such that if the name of your rails app is your-rails-app then the build section of your miazzle service looks like:
+
+```
+# docker-compose.yml
+services:
+  maizzle: 
+    build:
+      additional_contexts:
+        maizzle-src: .
+        app-src: ../your-rails-app/maizzle
+```
+
+...and such that the volumes section looks like:
+
+```
+...
+    volumes:
+      - node_modules:/artifact/node_modules
+      - ../<your-rails-app>/app/views/devise:/artifact/app/views/devise
+      - .:/artifact
 ```
 
 Build the maizzle image inside maizzle-compose:
