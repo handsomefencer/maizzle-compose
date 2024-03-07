@@ -23,9 +23,7 @@ RUN npm install
 
 COPY --from=maizzle-src . . 
 
-COPY ./app/views/ /artifact/app/views/
-
-## Uncomment if src is in your rails app:
+## Uncomment to override maizzle-src with app-src:
 # COPY --from=app-src ./maizzle/src ./ 
 
 
