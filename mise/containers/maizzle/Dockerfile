@@ -22,6 +22,8 @@ COPY --from=maizzle-src package.json package-lock.json ./
 RUN npm install
 
 COPY --from=maizzle-src . . 
+## Uncomment to keep work with src in your rails app directory:
+# COPY --from=app-src ./maizzle/src ./ 
 
 COPY ./app/views/ /artifact/app/views/
 

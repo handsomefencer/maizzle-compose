@@ -18,35 +18,46 @@
   </div>
 </div>
 
+## Why use Maizzle Compose?
+
+Maizzle allows you to write clean and fast email templates using inline styles but it can't interpolate ruby. Ruby on Rails allows you to preview email templates with interpolated ruby but it can't optimize them like Maizzle. 
+
+Maizzle Compose lets you write clean and fast email templates and preview them with interplated ruby. 
+
 ## Getting Started
 
-Clone this starter:
+Clone maizzle-compose adjacent your rails app: 
 
 ```bash
-npx degit maizzle/maizzle my-project
+git clone git@github.com:handsomefencer/maizzle-compose.git
 ```
 
-Install dependencies:
-
+such that
 ```
-cd my-project
-
-npm install
+$ ls -d */
+maizzle-compose/  your-rails-app/
 ```
 
-Start local development:
+Build the maizzle image inside maizzle-compose:
 
 ```
-npm run dev
+$ cd maizzle-compose
+$ docker compose build maizzle
 ```
 
-Build emails for production:
+To start the dev service:
 
 ```
-npm run build
+$ docker compose run --rm dev
 ```
 
-## Documentation
+To build for production:
+
+```
+$ docker compose run --rm maizzle
+```
+
+## Maizzle Documentation
 
 Maizzle documentation is available at https://maizzle.com
 
