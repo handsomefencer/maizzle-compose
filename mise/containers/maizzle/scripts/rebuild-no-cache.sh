@@ -6,6 +6,5 @@ docker volume rm $(docker volume ls --filter name=maizzle)
 docker system prune -f
 docker images
 docker volume ls
-sudo rm -rf app builds
-dc run --rm maizzle
+docker compose run --rm maizzle
 
