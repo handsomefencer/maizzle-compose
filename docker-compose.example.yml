@@ -10,7 +10,7 @@ services:
     volumes:
       - node_modules:/artifact/node_modules
       - ../<your-rails-app>/app/views/devise:/artifact/app/views/devise
-      - .:/artifact
+      - ./src:/artifact/src
 
   dev: 
     <<: *maizzle
