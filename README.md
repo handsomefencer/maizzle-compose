@@ -20,11 +20,7 @@
 
 ## Why use Maizzle Compose?
 
-Maizzle allows you to write clean and fast email templates using inline styles, but it can't interpolate ruby. 
-
-Ruby on Rails allows you to preview email templates with interpolated ruby, but it can't optimize them like Maizzle. 
-
-Maizzle Compose lets you do both: Write clean and fast email templates and preview them with interplated ruby. 
+Maizzle helps you to write clean and fast email templates using inline styles. Ruby on Rails allows you to preview email templates with interpolated ruby Maizzle Compose lets you do both. 
 
 ## Getting Started
 
