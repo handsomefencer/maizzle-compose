@@ -32,7 +32,8 @@ Clone maizzle-compose adjacent your rails app:
 git clone git@github.com:handsomefencer/maizzle-compose.git
 ```
 
-...such that
+...such that:
+
 ```
 $ ls -d */
 maizzle-compose/  your-rails-app/
