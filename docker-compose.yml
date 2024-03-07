@@ -1,20 +1,21 @@
 services:
   maizzle: &maizzle
     build:
-      context: .
+      context: ../story_store
+      additional_contexts:
+        maizzle-src: .
       dockerfile: ./mise/containers/maizzle/Dockerfile
-    image: handsomefencer/club/maizzle 
-
-  dev:
-    <<: *maizzle
-    command: npm run dev
+    image: handsomefencer/maizzle-compose 
+    entrypoint: ./mise/containers/maizzle/entrypoints/build-production.sh
     ports:
       - "3002:3002"
       - "3003:3003"
     restart: on-failure
+    user: root 
     volumes:
+      - node_modules:/artifact/node_modules
+      - ../story_store/app/views/devise:/artifact/app/views/devise
       - .:/artifact
 
 volumes:
   node_modules:
-  maizzle:
